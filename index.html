@@ -42,10 +42,11 @@
 		#page4 .subtext p.font{margin:20px 0;color:#fff;}
 		#page4 .maintext h1{font-size:80px;font-family:roboto;letter-spacing:-5px;}
 		#page4 .text p{font-family:"나눔고딕";margin:20px 0;}
-		#page5 .slide{background:url(./images/bg_section1.jpg);background-size:cover;}
-		#page5 .text{padding-left:200px;}
-		#page5 .text h1{font-size:80px;font-family:'roboto';color:#fff;letter-spacing:-5px;}
-		#page5 .text p{font-family:'나눔고딕';color:#fff;}
+		#page5 .slide:nth-child(1){background:url(./images/bg_section1.jpg);background-size:cover;}
+		#page5 .slide:nth-child(2){background:url(./images/page5.jpg);background-size:cover;}
+		#page5 .subtext{padding-left:200px;}
+		#page5 .maintext h1{font-size:80px;font-family:'roboto';color:#fff;letter-spacing:-5px;}
+		#page5 .maintext p{font-family:'나눔고딕';color:#fff;}
 	</style>
 	<script>
 		$(function(){
@@ -70,6 +71,11 @@
 						$("#page4 .maintext").addClass("mtext");
 					}else{
 						$("#page4 .maintext").removeClass("mtext");
+					}
+					if(index==5){
+						$("#page5 .maintext").addClass("mtext");
+					}else{
+						$("#page5 .maintext").removeClass("mtext");
 					}
 				}
 			});
@@ -167,10 +173,20 @@
 		</div>
 		<div class="section" data-anchor="5st" id="page5">
 			<div class="slide">
-				<div class="text">
+				<div class="maintext">
 					<h1>ANANTI<br>HOME PAGE</h1>
 					<p>워드프레스를 이용한 아난티 서울 홈페이지<br>					
 					</p>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="subtext">
+					<h2>INCREDIBLES 2</h2>
+					<p class="font">영화 '인크레드블 2'의 영화소개를 위한 풀페이지 홈페이지<br>
+					풀페이지 슬라이드를 이용한 메인 페이지로<br>
+					영화의 컨셉을 확실히 나타내었다.
+					</p>
+					<button type="button">바로가기</button>
 				</div>
 			</div>
 		</div>
