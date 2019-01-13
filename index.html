@@ -12,15 +12,18 @@
 		.header{width:100%;height:100%;background:black;color:white;text-align:center;padding:50px;}
 		.row{display:flex;flex-wrap:wrap;width:100%;height:100%;background:#000;}
 		.row .container{flex:1 0 0;padding:10px;opacity:0;transition:0.5s;}
+		.row .containers{flex:1 0 0;padding:10px;opacity:0;transition:0.5s;}
 		.row .down{transform:translateY(200px);}
 		.row .up{transform:translateY(-200px);transition-delay:0.3s;}
 		.row .container.active{opacity:1;transform:translateY(0);}
+		.row .containers.active{opacity:1;transform:translateY(0);}
 		.row .slideSub{flex:1 0 0;padding:10px;opacity:0;transition:0.5s;}
 		.row .slideSub.sactive{opacity:1;transform:translateY(0);}
 		.row .container .box{width:100%;text-align:center;margin-bottom:10px;}
+		.row .containers .box{width:100%;text-align:center;margin-bottom:10px;}
 		#fullpage{width:100%;height:100%;}
 		#navtop{width:100%;position:fixed;top:0;left:0;background:rgba(0,0,0,0.5);z-index:1;}
-		#navtop>ul{width:50%;margin:0 auto;}
+		#navtop>ul{width:35%;margin:0 auto;}
 		#navtop>ul:after{content:"";display:block;clear:both;}
 		#navtop>ul>li{float:left;}
 		#navtop>ul>li:after{content:"";}
@@ -48,25 +51,28 @@
 		#page5 .subtext h2{color:#fff;}
 		#page5 .maintext h1{font-size:80px;font-family:'roboto';color:#fff;letter-spacing:-5px;}
 		#page5 .maintext p{font-family:'나눔고딕';color:#fff;}
+		#page6 .row .container{margin-top:50px;}
+		#page6 .row .container img{transition-duration:.8s;cursor:pointer;}
+		#page6 .row .container img.trans{transform: translateY(-50px);}
 	</style>
 	<script>
 		$(function(){
 			$("#fullpage").fullpage({
-				links:["1st","2st","3st","4st","5st"],
-				anchors:["1st","2st","3st","4st","5st"],
+				links:["1st","2st","3st","4st","5st","6st"],
+				anchors:["1st","2st","3st","4st","5st","6st"],
 				menu:"#topmenu",
 				'afterLoad':function(anchorsLink,index){
 					if(index==2){
-						$(".container").addClass("active");
+						$(".containers").addClass("active");
 					}else{
-						$(".container").removeClass("active");
+						$(".containers").removeClass("active");
 					}
 					if(index==3){
 						$(".slideSub").addClass("sactive");
 						$("#page3 .maintext").addClass("mtext");
 					}else{
 						$(".slideSub").removeClass("sactive");
-						$("#page3 .maintext").removeClass("mtext ");
+						$("#page3 .maintext").removeClass("mtext");
 					}
 					if(index==4){
 						$("#page4 .maintext").addClass("mtext");
@@ -78,6 +84,19 @@
 					}else{
 						$("#page5 .maintext").removeClass("mtext");
 					}
+					if(index==6){
+						$(".container").addClass("active");
+					}else{
+						$(".container").removeClass("active");
+					}
+				}
+			});
+			$("#page6 img").on({
+				mouseenter:function(){
+					$(this).addClass("trans");
+				},
+				mouseleave:function(){
+					$(this).removeClass("trans");
 				}
 			});
 		});
@@ -91,33 +110,34 @@
 			<li data-menuanchor="3st"><a href="#3st">SITE O1</a></li>
 			<li data-menuanchor="4st"><a href="#4st">SITE 02</a></li>
 			<li data-menuanchor="5st"><a href="#5st">SITE 03</a></li>
+			<li data-menuanchor="6st"><a href="#5st">PORTFORIO</a></li>
 		</ul>
 	</nav>
 	<div id="fullpage">
 		<div data-anchor="1st" id="page1" class="section header"> 
-			PORTPOLIO
+			PORTFOLIO
 		</div>
 		<div class="section" data-anchor="2st" id="page2">
 			<div class="row">
-				<div class="container down">
+				<div class="containers down">
 					<div class="box" style="_height:100px;background:#eee">box1</div>
 					<div class="box" style="height:500px;background:#aaa">box2</div>
 					<div class="box" style="height:100px;background:#eee">box3</div>
 					<div class="box" style="height:300px;background:#555">box4</div>
 				</div>
-				<div class="container up">
+				<div class="containers up">
 					<div class="box" style="height:300px;background:#555">box1</div>
 					<div class="box" style="_height:100px;background:#eee">box2</div>
 					<div class="box" style="height:500px;background:#aaa">box3</div>
 					<div class="box" style="height:100px;background:#333">box4</div>
 				</div>
-				<div class="container down">
+				<div class="containers down">
 					<div class="box" style="_height:100px;background:#333">box1</div>
 					<div class="box" style="height:100px;background:#eee">box2</div>
 					<div class="box" style="height:300px;background:#555">box3</div>
 					<div class="box" style="height:500px;background:#aaa">box4</div>
 				</div>
-				<div class="container up">
+				<div class="containers up">
 					<div class="box" style="height:500px;background:#aaa">box1</div>
 					<div class="box" style="height:300px;background:#555">box2</div>
 					<div class="box" style="_height:100px;background:#eee">box3</div>
@@ -140,7 +160,7 @@
 					캐릭터 이미지를 활용해 애니메이션 효과로<br>
 					역동적인 홈페이지를 제작하였다.
 					</p>
-					<a href="http://nana5116.dothome.co.kr">바로가기</a>
+					<a href="http://nana5116.dothome.co.kr" target="_blank">바로가기</a>
 				</div>
 			</div>
 			<div class="slide">
@@ -166,7 +186,7 @@
 					필요한 정보들을 깔끔한 박스형태로 배치하여<br>
 					공유할 수 있는 반응형 홈페이지
 					</p>
-					<a href="https://choidayeon.github.io/interior">바로가기</a>
+					<a href="https://choidayeon.github.io/interior" target="_blank">바로가기</a>
 				</div>
 			</div>
 		</div>
@@ -185,7 +205,29 @@
 					이용하여 리뉴얼 홈페이지로 제작하였다.<br>
 					호텔에서으 휴식과 편안함으로 사이트를 구성하였다.
 					</p>
-					<a href="http://dy20121189.dothome.co.kr">바로가기</a>
+					<a href="http://dy20121189.dothome.co.kr" target="_blank">바로가기</a>
+				</div>
+			</div>
+		</div>
+		<div class="section" data-anchor="6st" id="page6">
+			<div class="row">
+				<div class="container down">
+					<div class="box" style="height:25%;overflow:hidden"><img src="./images/ppimg01.jpg" alt="ppimg01" style="width:100%;"></div>
+					<div class="box" style="height:25%;overflow:hidden"><img src="./images/ppimg02.jpg" alt="ppimg02" style="width:100%;"></div>
+					<div class="box" style="height:25%;overflow:hidden"><img src="./images/ppimg03.jpg" alt="ppimg03" style="width:100%;"></div>
+				</div>
+				<div class="container up">
+					<div class="box" style="height:38%;background:#555">box1</div>
+					<div class="box" style="height:38%;background:#eee">box2</div>
+				</div>
+				<div class="container down">
+					<div class="box" style="height:38%;background:#333">box1</div>
+					<div class="box" style="height:38%;background:#eee">box2</div>
+				</div>
+				<div class="container up">
+					<div class="box" style="height:25%;background:#aaa">box1</div>
+					<div class="box" style="height:25%;background:#555">box2</div>
+					<div class="box" style="height:25%;background:#eee">box3</div>
 				</div>
 			</div>
 		</div>
