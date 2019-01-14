@@ -44,7 +44,6 @@
 		#page4 .subtext{padding-left:1000px;margin-top:-300px;color:#fff;}
 		#page4 .subtext p.font{margin:20px 0 50px;color:#fff;}
 		#page4 .maintext h1{font-size:80px;font-family:roboto;letter-spacing:-5px;}
-		#page4 .text p{font-family:"나눔고딕";margin:20px 0;}
 		#page5 .slide:nth-child(1){background:url(./images/bg_section1.jpg);background-size:cover;}
 		#page5 .slide:nth-child(2){background:url(./images/page5.jpg);background-size:cover;}
 		#page5 .subtext{padding-left:200px;}
@@ -52,8 +51,12 @@
 		#page5 .maintext h1{font-size:80px;font-family:'roboto';color:#fff;letter-spacing:-5px;}
 		#page5 .maintext p{font-family:'나눔고딕';color:#fff;}
 		#page6 .row .container{margin-top:50px;}
-		#page6 .row .container img{transition-duration:.8s;cursor:pointer;}
-		#page6 .row .container img.trans{transform: translateY(-50px);}
+		#page6 .row .container .ppimg{transition-duration:.8s;cursor:pointer;}
+		#page6 .row .container .ppimg.trans{transform: translateY(-50px);}
+		#page6 .row .container .box{position:relative;}
+		#page6 .row .container .box .pptext{position:absolute;bottom:-50px;left:0;width:100%;height:50px;background:rgba(0,0,0,0.7);color:#fff;line-height:50px;font-weight:bold;transition-duration:.8s;}
+		#glayLayer{position:fixed;left:0;top:0;width:100%;height:100%;background:#000;opacity:0.8;display:none;}
+		#overLayer{position:fixed;top:50%;left:50%;margin-top:-300px;margin-left:-215px;width:30%;}
 	</style>
 	<script>
 		$(function(){
@@ -91,13 +94,26 @@
 					}
 				}
 			});
-			$("#page6 img").on({
+			$("#page6 .ppimg").on({
 				mouseenter:function(){
 					$(this).addClass("trans");
+					$(this).next(".pptext").css("bottom","0");
 				},
 				mouseleave:function(){
 					$(this).removeClass("trans");
+					$(this).next(".pptext").css("bottom","-50px");
 				}
+			});
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			$("#page6 a").click(function(){
+				// e.preventDefault();
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='" + $(this).attr('href') + "'>");
+				return false
+			});
+			$("#glayLayer,#overLayer").click(function(){
+				$("#glayLayer").hide();
+				$("#overLayer").hide();
 			});
 		});
 	</script>
@@ -212,19 +228,34 @@
 		<div class="section" data-anchor="6st" id="page6">
 			<div class="row">
 				<div class="container down">
-					<div class="box" style="height:25%;overflow:hidden"><img src="./images/ppimg01.jpg" alt="ppimg01" style="width:100%;"></div>
-					<div class="box" style="height:25%;overflow:hidden"><img src="./images/ppimg02.jpg" alt="ppimg02" style="width:100%;"></div>
-					<div class="box" style="height:25%;overflow:hidden"><img src="./images/ppimg03.jpg" alt="ppimg03" style="width:100%;"></div>
+					<div class="box" style="height:25%;overflow:hidden">
+						<a href="./images/ppimg1.jpg" alt="ppimg01" style="width:100%;">
+							<img src="./images/ppimg01.jpg" alt="modal" class="ppimg">
+							<div class="pptext">[포스터]고고차이나</div>
+						</a>						
+					</div>
+					<div class="box" style="height:25%;overflow:hidden">
+						<a href="./images/ppimg2.jpg" alt="ppimg02" style="width:100%">
+							<img src="./images/ppimg02.jpg" alt="modal2" class="ppimg">
+							<div class="pptext">[전단지]애듀프라임</div>
+						</a>
+					</div>
+					<div class="box" style="height:25%;overflow:hidden">
+						<a href="./images/ppimg3.jpg" alt="ppimg03" style="width:100%">
+							<img src="./images/ppimg03.jpg" alt="modal3" class="ppimg">
+							<div class="pptext">[포스터]청소년 작업장</div>
+						</a>
+					</div>
 				</div>
 				<div class="container up">
 					<div class="box" style="height:38%;background:#555">box1</div>
 					<div class="box" style="height:38%;background:#eee">box2</div>
 				</div>
-				<div class="container down">
+				<div class="container up">
 					<div class="box" style="height:38%;background:#333">box1</div>
 					<div class="box" style="height:38%;background:#eee">box2</div>
 				</div>
-				<div class="container up">
+				<div class="container down">
 					<div class="box" style="height:25%;background:#aaa">box1</div>
 					<div class="box" style="height:25%;background:#555">box2</div>
 					<div class="box" style="height:25%;background:#eee">box3</div>
