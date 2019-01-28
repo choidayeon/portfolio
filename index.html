@@ -117,6 +117,14 @@
 				$("#glayLayer").hide();
 				$("#overLayer").hide();
 			});
+			$(".choi").on({
+				mouseenter:function(){
+					$(".choicolor").css("opacity","1");
+				},
+				mouseleave:function(){
+					$(".choicolor").css("opacity","0");
+				}
+			})
 		});
 	</script>
 </head>
@@ -128,38 +136,34 @@
 			<li data-menuanchor="3st"><a href="#3st">SITE O1</a></li>
 			<li data-menuanchor="4st"><a href="#4st">SITE 02</a></li>
 			<li data-menuanchor="5st"><a href="#5st">SITE 03</a></li>
-			<li data-menuanchor="6st"><a href="#5st">PORTFORIO</a></li>
+			<li data-menuanchor="6st"><a href="#6st">PORTFORIO</a></li>
 		</ul>
 	</nav>
 	<div id="fullpage">
 		<div data-anchor="1st" id="page1" class="section header"> 
-			PORTFOLIO
+			<div class="row">
+				<div class="container">
+					<div class="box">
+						<p style="font-size:50px;color:white;">C</p>
+					</div>
+				</div>
+				<div class="container">
+					<div class="box">
+						<p style="font-size:50px;color:#fff;">H</p>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="section" data-anchor="2st" id="page2">
 			<div class="row">
-				<div class="containers down">
-					<div class="box" style="_height:100px;background:#eee">box1</div>
-					<div class="box" style="height:500px;background:#aaa">box2</div>
-					<div class="box" style="height:100px;background:#eee">box3</div>
-					<div class="box" style="height:300px;background:#555">box4</div>
+				<div class="containers">
+					<div class="box choi" style="margin-top:150px;position:relative;cursor:pointer;">
+						<img src="./images/choi_black.png" alt="choi" style="width:50%;position:absolute;top:0;left:200px;">
+						<img src="./images/choi_color.png" alt="choi2" style="width:50%;position:absolute;top:0;left:200px;opacity:0;transition-duration:1.5s" class="choicolor">
+					</div>
 				</div>
-				<div class="containers up">
-					<div class="box" style="height:300px;background:#555">box1</div>
-					<div class="box" style="_height:100px;background:#eee">box2</div>
-					<div class="box" style="height:500px;background:#aaa">box3</div>
-					<div class="box" style="height:100px;background:#333">box4</div>
-				</div>
-				<div class="containers down">
-					<div class="box" style="_height:100px;background:#333">box1</div>
-					<div class="box" style="height:100px;background:#eee">box2</div>
-					<div class="box" style="height:300px;background:#555">box3</div>
-					<div class="box" style="height:500px;background:#aaa">box4</div>
-				</div>
-				<div class="containers up">
-					<div class="box" style="height:500px;background:#aaa">box1</div>
-					<div class="box" style="height:300px;background:#555">box2</div>
-					<div class="box" style="_height:100px;background:#eee">box3</div>
-					<div class="box" style="height:100px;background:#333">box4</div>
+				<div class="containers">
+					<div class="box" style="height:500px;background:#aaa;margin-top:150px">box1</div>
 				</div>
 			</div>
 		</div>
