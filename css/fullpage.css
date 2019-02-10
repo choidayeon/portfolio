@@ -99,9 +99,18 @@ html.fp-enabled,
     position: fixed;
     z-index: 100;
     margin-top: -32px;
-    top: 50%;
+    top: 10%;
+    left:calc(50% - 84px);
     opacity: 1;
     -webkit-transform: translate3d(0,0,0);
+}
+#fp-nav ul:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#fp-nav ul li{
+    float:left;
 }
 #fp-nav.fp-right {
     right: 17px;

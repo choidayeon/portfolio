@@ -6,12 +6,13 @@
 	<title>CHOI</title>
 	<link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/fullpage.css">
+	<link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
 	<script src="./js/jquery-3.3.1.min.js"></script>
 	<script src="./js/jquery.fullPage.js"></script>
 	<style>
 		.header{width:100%;height:100%;background:black;color:white;text-align:center;padding:50px;}
-		.row{display:flex;flex-wrap:wrap;width:100%;height:100%;background:#000;}
-		.row .container{flex:1 0 0;padding:10px;opacity:0;transition:0.5s;}
+		.row{display:flex;flex-wrap:wrap;width:100%;height:100%;}
+		.row .container{flex:1 0 0;padding:10px;_opacity:0;transition:0.5s;}
 		.row .containers{flex:1 0 0;padding:10px;opacity:0;transition:0.5s;}
 		.row .down{transform:translateY(200px);}
 		.row .up{transform:translateY(-200px);transition-delay:0.3s;}
@@ -51,13 +52,33 @@
 		#page5 .subtext h2{color:#fff;}
 		#page5 .maintext h1{font-size:80px;font-family:'roboto';color:#fff;letter-spacing:-5px;}
 		#page5 .maintext p{font-family:'나눔고딕';color:#fff;}
-		#page6 .row .container{margin-top:50px;}
-		#page6 .row .container .ppimg{transition-duration:.8s;cursor:pointer;}
-		#page6 .row .container .ppimg.trans{transform: translateY(-50px);}
-		#page6 .row .container .box{position:relative;}
-		#page6 .row .container .box .pptext{position:absolute;bottom:-50px;left:0;width:100%;height:50px;background:rgba(0,0,0,0.7);color:#fff;line-height:50px;font-weight:bold;transition-duration:.8s;}
+		#page6 .row .containers{margin-top:50px;}
+		#page6 .row .containers .ppimg{transition-duration:.8s;cursor:pointer;}
+		#page6 .row .containers .ppimg.trans{transform: translateY(-50px);}
+		#page6 .row .containers .box{position:relative;}
+		#page6 .row .containers .box .pptext{position:absolute;bottom:-50px;left:0;width:100%;height:50px;background:rgba(0,0,0,0.7);color:#fff;line-height:50px;font-weight:bold;transition-duration:.8s;}
 		#glayLayer{position:fixed;left:0;top:0;width:100%;height:100%;background:#000;opacity:0.8;display:none;}
 		#overLayer{position:fixed;top:50%;left:50%;margin-top:-300px;margin-left:-400px;width:60%;}
+		#page1 .box p{font-size:150px;color:#fff;text-align:left;font-family: 'Bowlby One SC', cursive;}
+		#page1 .box{margin:0;}
+		#page1 .container{padding:0;}
+		#page1{background: -webkit-gradient(linear, top left, bottom left, from(#4bbfc3),to(#7baabe));
+		background: -webkit-linear-gradient(#4BBFC3, #7BAABE);
+		background: linear-gradient(#4BBFC3,#7BAABE);}
+		#page2{background: -webkit-gradient(linear, top left, bottom left, from(#7baabe), to(#969ac6));
+		background: -webkit-linear-gradient(#7BAABE, #969AC6);
+		background: linear-gradient(#7BAABE,#969AC6);}
+		#page6{background: -webkit-gradient(linear, top left, bottom left, from(#92a1ca), to(#76c2bd));
+		background: -webkit-linear-gradient(#92a1ca, #76c2bd);
+		background: linear-gradient(#92a1ca,#76c2bd);}
+		.header-top{background: rgba(0, 47, 77, .3);height: 50px;padding: 0 10px;position: fixed;top: 0;width: 100%;z-index: 12;box-sizing:border-box;}
+		.header-top h1{float:left;padding-left:20px;font-size:25px;line-height:50px;}
+		.toggle-menu {width: 50px;height: 50px;display: inline-block;position: relative;top: 10px;float:right;padding-right:20px;}
+
+.toggle-menu i {position: absolute;display: block;height: 2px;background: #000;width: 30px;left: 10px;-webkit-transition: all .3s;transition: all .3s;}
+.toggle-menu i:nth-child(1) {top: 8px;}
+.toggle-menu i:nth-child(2) {top: 14px;}
+.toggle-menu i:nth-child(3) {top: 20px;}
 	</style>
 	<script>
 		$(function(){
@@ -65,12 +86,14 @@
 				links:["1st","2st","3st","4st","5st","6st"],
 				anchors:["1st","2st","3st","4st","5st","6st"],
 				menu:"#topmenu",
+				sectionSelector: '.vertical-scrolling',
+ 				navigation: true,
+				
 				'afterLoad':function(anchorsLink,index){
 					if(index==2){
-						$(".containers").addClass("active");
-						$("#topmenu>li>a").addClass("mactive");
+						$("#topmenu>li").addClass("mactive");
 					}else{
-						$(".containers").removeClass("active");
+						$("#topmenu>li").removeClass("mactive");
 					}
 					if(index==3){
 						$(".slideSub").addClass("sactive");
@@ -90,9 +113,9 @@
 						$("#page5 .maintext").removeClass("mtext");
 					}
 					if(index==6){
-						$(".container").addClass("active");
+						$(".containers").addClass("active");
 					}else{
-						$(".container").removeClass("active");
+						$(".containers").removeClass("active");
 					}
 				}
 			});
@@ -129,7 +152,17 @@
 	</script>
 </head>
 <body>
-	<nav id="navtop">
+    <div class="header-top clearfix">
+    	<h1>
+    		<a href="#firstSection">CHOI PORTFORIO_____</a>
+    	</h1>
+   		<a class="l-right toggle-menu" href="#">
+   			<i></i>
+   			<i></i>
+   			<i></i>
+   		</a>
+    </div>
+	<nav id="navtop" style="display:none">
 		<ul id="topmenu">
 			<li data-menuanchor="1st"><a href="#1st">HOME</a></li>
 			<li data-menuanchor="2st"><a href="#2st">MAIN</a></li>
@@ -140,34 +173,35 @@
 		</ul>
 	</nav>
 	<div id="fullpage">
-		<div data-anchor="1st" id="page1" class="section header"> 
+		<div data-anchor="1st" id="page1" class="section header vertical-scrolling"> 
 			<div class="row">
 				<div class="container">
 					<div class="box">
-						<p style="font-size:50px;color:white;">C</p>
+						<p>CHOI</p>
 					</div>
-				</div>
-				<div class="container">
 					<div class="box">
-						<p style="font-size:50px;color:#fff;">H</p>
+						<p>DA</p>
+					</div>
+					<div class="box">
+						<p>YEON</p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="section" data-anchor="2st" id="page2">
+		<div class="section vertical-scrolling" data-anchor="2st" id="page2">
 			<div class="row">
-				<div class="containers">
+				<div class="container">
 					<div class="box choi" style="margin-top:150px;position:relative;cursor:pointer;">
-						<img src="./images/choi_black.png" alt="choi" style="width:50%;position:absolute;top:0;left:200px;">
-						<img src="./images/choi_color.png" alt="choi2" style="width:50%;position:absolute;top:0;left:200px;opacity:0;transition-duration:1.5s" class="choicolor">
+						<!-- <img src="./images/choi_black.png" alt="choi" style="width:50%;position:absolute;top:0;left:200px;"> -->
+						<img src="./images/choi_color.png" alt="choi2" style="width:50%;position:absolute;top:0;left:200px;_opacity:0;transition-duration:1.5s" class="choicolor">
 					</div>
 				</div>
-				<div class="containers">
+				<div class="container">
 					<div class="box" style="height:500px;background:#aaa;margin-top:150px">box1</div>
 				</div>
 			</div>
 		</div>
-		<div class="section" data-anchor="3st" id="page3">
+		<div class="section vertical-scrolling" data-anchor="3st" id="page3">
 			<div class="slide">
 				<div class="maintext">
 					<h1>INCREDIBLES 2<br>HOME PAGE</h1>
@@ -193,7 +227,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="section" data-anchor="4st" id="page4">
+		<div class="section vertical-scrolling" data-anchor="4st" id="page4">
 			<div class="slide">
 				<div class="maintext">
 					<h1>INTERIOR<br>HOME PAGE</h1>
@@ -212,7 +246,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="section" data-anchor="5st" id="page5">
+		<div class="section vertical-scrolling" data-anchor="5st" id="page5">
 			<div class="slide">
 				<div class="maintext">
 					<h1>ANANTI<br>HOME PAGE</h1>
@@ -231,9 +265,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="section" data-anchor="6st" id="page6">
+		<div class="section vertical-scrolling" data-anchor="6st" id="page6">
 			<div class="row">
-				<div class="container down">
+				<div class="containers down">
 					<div class="box" style="height:25%;overflow:hidden">
 						<a href="./images/ppimg1.jpg" alt="ppimg01" style="width:100%;">
 							<img src="./images/ppimg01.jpg" alt="modal" class="ppimg">
@@ -253,7 +287,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="container up">
+				<div class="containers up">
 					<div class="box" style="height:38%;overflow:hidden">
 						<a href="./images/ppimg4.jpg" alt="ppimg04" style="width:100%">
 							<img src="./images/ppimg04.jpg" alt="modal4" class="ppimg">
@@ -267,7 +301,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="container up">
+				<div class="containers up">
 					<div class="box" style="height:38%;overflow:hidden">
 						<a href="./images/ppimg6.jpg" alt="ppimg06" style="width:100%">
 							<img src="./images/ppimg06.jpg" alt="modal6" class="ppimg">
@@ -281,7 +315,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="container down">
+				<div class="containers down">
 					<div class="box" style="height:25%;overflow:hidden">
 						<a href="./images/ppimg8.jpg" alt="ppimg08" style="width:100%">
 							<img src="./images/ppimg08.jpg" alt="modal8" class="ppimg">
