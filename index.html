@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/fullpage.css">
 	<link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR" rel="stylesheet">
 	<script src="./js/jquery-3.3.1.min.js"></script>
 	<script src="./js/jquery.fullPage.js"></script>
 	<style>
@@ -75,10 +76,11 @@
 		.header-top h1{float:left;padding-left:20px;font-size:25px;line-height:50px;}
 		.toggle-menu {width: 50px;height: 50px;display: inline-block;position: relative;top: 10px;float:right;padding-right:20px;}
 
-.toggle-menu i {position: absolute;display: block;height: 2px;background: #000;width: 30px;left: 10px;-webkit-transition: all .3s;transition: all .3s;}
-.toggle-menu i:nth-child(1) {top: 8px;}
-.toggle-menu i:nth-child(2) {top: 14px;}
-.toggle-menu i:nth-child(3) {top: 20px;}
+		.toggle-menu i {position: absolute;display: block;height: 2px;background: #000;width: 30px;left: 10px;-webkit-transition: all .3s;transition: all .3s;}
+		.toggle-menu i:nth-child(1) {top: 8px;}
+		.toggle-menu i:nth-child(2) {top: 14px;}
+		.toggle-menu i:nth-child(3) {top: 20px;}
+		.noto{font-family: 'Noto Serif KR', serif;}
 	</style>
 	<script>
 		$(function(){
@@ -140,14 +142,10 @@
 				$("#glayLayer").hide();
 				$("#overLayer").hide();
 			});
-			$(".choi").on({
-				mouseenter:function(){
-					$(".choicolor").css("opacity","1");
-				},
-				mouseleave:function(){
-					$(".choicolor").css("opacity","0");
-				}
-			})
+			$(".choi").click(function(){
+					$(".choi_box").css({"width":"100%","opacity":"1"});
+					$(".choi_box2").css({"width":"100%","opacity":"1"});
+				});
 		});
 	</script>
 </head>
@@ -177,10 +175,10 @@
 			<div class="row">
 				<div class="container">
 					<div class="box">
-						<p>CHOI</p>
+						<p style="line-height:200px;">CHOI</p>
 					</div>
 					<div class="box">
-						<p>DA</p>
+						<p style="line-height:200px;">DA</p>
 					</div>
 					<div class="box">
 						<p>YEON</p>
@@ -190,14 +188,21 @@
 		</div>
 		<div class="section vertical-scrolling" data-anchor="2st" id="page2">
 			<div class="row">
-				<div class="container">
+				<div class="container" style="padding:0;">
 					<div class="box choi" style="margin-top:150px;position:relative;cursor:pointer;">
 						<!-- <img src="./images/choi_black.png" alt="choi" style="width:50%;position:absolute;top:0;left:200px;"> -->
-						<img src="./images/choi_color.png" alt="choi2" style="width:50%;position:absolute;top:0;left:200px;_opacity:0;transition-duration:1.5s" class="choicolor">
+						<img src="./images/choi_color.png" alt="choi2" style="width:70%;position:absolute;top:0;left:0;transition-duration:1.5s" class="choicolor">
 					</div>
 				</div>
 				<div class="container">
-					<div class="box" style="height:500px;background:#aaa;margin-top:150px">box1</div>
+					<div class="box choi_box noto" style="margin-top:150px;transition-duration:1.5s;text-align:left;width:0;opacity:0;line-height:30px">
+						이름_최다연<br>
+						생년월일_1993.03.05
+					</div>
+					<div class="box choi_box2 noto" style="text-align:left;transition-duration:1.5s;width:0;opacity:0;line-height:30px;transition-delay:0.5s">
+						프로그램_<br>
+						photoshop + illust + html + css + jquery + javascript
+					</div>
 				</div>
 			</div>
 		</div>
