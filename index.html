@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/fullpage.css">
 	<link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
 	<script src="./js/jquery-3.3.1.min.js"></script>
 	<script src="./js/jquery.fullPage.js"></script>
 	<style>
@@ -81,6 +81,15 @@
 		.toggle-menu i:nth-child(2) {top: 14px;}
 		.toggle-menu i:nth-child(3) {top: 20px;}
 		.noto{font-family: 'Noto Serif KR', serif;}
+		@keyframes scroll{
+			0%{
+				border-radius:0 0 0 0;
+			}
+			100%{
+				height:100px;
+				background:indianred;
+			}
+		}
 	</style>
 	<script>
 		$(function(){
@@ -173,16 +182,21 @@
 	<div id="fullpage">
 		<div data-anchor="1st" id="page1" class="section header vertical-scrolling"> 
 			<div class="row">
+				<div class="container" style="padding-top:calc(50% - 450px);">
+					<div class="box">
+						<p style="line-height:150px;">CHOI</p>
+					</div>
+					<div class="box">
+						<p style="line-height:150px;">DA</p>
+					</div>
+					<div class="box">
+						<p style="line-height:150px;">YEON</p>
+					</div>
+				</div>
 				<div class="container">
-					<div class="box">
-						<p style="line-height:200px;">CHOI</p>
-					</div>
-					<div class="box">
-						<p style="line-height:200px;">DA</p>
-					</div>
-					<div class="box">
-						<p>YEON</p>
-					</div>
+					<div class="box" style="height:300px;line-height:400px;font-size:30px;color:coral;">PORTFOLIO</div>
+					<div class="box" style="padding:20px;color:indianred;">scroll</div>
+					<div class="box scroll" style="width:5px;height:50px;background-color:coral;margin-left:calc(50% - 2.5px);text-indent:-9999px;animation:scroll 2s infinite">scroll</div>
 				</div>
 			</div>
 		</div>
