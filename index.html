@@ -81,6 +81,21 @@
 		.toggle-menu i:nth-child(2) {top: 14px;}
 		.toggle-menu i:nth-child(3) {top: 20px;}
 		.noto{font-family: 'Noto Serif KR', serif;}
+		nav {height: 0;opacity: 0;box-sizing: border-box;background: rgba(0, 47, 77, .25);position: fixed;top: 70px;width: 100%;
+  -webkit-transition: all 3s;transition: all 3s;}
+		nav ul {padding: 0 10px;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;}
+		nav li {-webkit-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;}
+		nav li a {font-size: 1.2em;display: block;padding: 30px;text-align: center;-webkit-transition: background .3s;transition: background .3s;}
+		nav li:nth-child(odd) a,
+		body.fp-viewing-fifthSection-1 #menu li:nth-child(5) a {background: #962D3E;}
+		nav li:nth-child(even) a {background: #aa3346;}
+		nav li:nth-child(odd) a:hover {background: #9e2f41;}
+		nav li:nth-child(even) a:hover {background: #c53c52;}
+		nav li.active a,
+		body.fp-viewing-fifthSection-1 #menu li:last-child a {background: #453659;}
+		.open-menu i:nth-child(1) {top: 15px;-webkit-transform: rotateZ(45deg);transform: rotateZ(45deg);}
+		.open-menu i:nth-child(2) {background: transparent;}
+		.open-menu i:nth-child(3) {top: 15px;-webkit-transform: rotateZ(-45deg);transform: rotateZ(-45deg);}
 		@keyframes scroll{
 			0%{
 				border-radius:0 0 0 0;
@@ -155,6 +170,19 @@
 					$(".choi_box").css({"width":"100%","opacity":"1"});
 					$(".choi_box2").css({"width":"100%","opacity":"1"});
 				});
+			var $nav = $('nav');
+			var $header_top = $('.header-top');
+
+			$header_top.find('a').on('click', function() {
+				  $(this).parent().toggleClass('open-menu');
+				  $("nav").css({"opacity":"1","z-index":"100"});
+				});
+
+			$("html").click(function(e) {
+		    if(!$(e.target).closest('header').length) {
+		        $header_top.removeClass('open-menu');
+		    }
+			});
 		});
 	</script>
 </head>
@@ -169,16 +197,28 @@
    			<i></i>
    		</a>
     </div>
-	<nav id="navtop" style="display:none">
-		<ul id="topmenu">
-			<li data-menuanchor="1st"><a href="#1st">HOME</a></li>
-			<li data-menuanchor="2st"><a href="#2st">MAIN</a></li>
-			<li data-menuanchor="3st"><a href="#3st">SITE O1</a></li>
-			<li data-menuanchor="4st"><a href="#4st">SITE 02</a></li>
-			<li data-menuanchor="5st"><a href="#5st">SITE 03</a></li>
-			<li data-menuanchor="6st"><a href="#6st">PORTFORIO</a></li>
-		</ul>
-	</nav>
+	<nav class="hide">
+	    <ul id="menu">
+	      <li data-menuanchor="1st">
+	        <a href="#page1" title="First Section">Home</a>
+	      </li>
+	      <li data-menuanchor="2st">
+	        <a href="#page2" title="Second Section">Choi Dayeon</a>
+	      </li>
+	      <li data-menuanchor="3st">
+	        <a href="#page3" title="Second Section">Incredibles2</a>
+	      </li>
+	      <li data-menuanchor="4st">
+	        <a href="#page4" title="Fourth Section">Interior</a>
+	      </li>
+	      <li data-menuanchor="5st">
+	        <a href="#page5" title="First Slide">Ananti Hotel</a>
+	      </li>
+	      <li data-menuanchor="6st">
+	        <a href="#page6" title="Second Slide">Editorial</a>
+	      </li>
+	    </ul>
+	  </nav>
 	<div id="fullpage">
 		<div data-anchor="1st" id="page1" class="section header vertical-scrolling"> 
 			<div class="row">
@@ -194,9 +234,9 @@
 					</div>
 				</div>
 				<div class="container">
-					<div class="box" style="height:300px;line-height:400px;font-size:30px;color:coral;">PORTFOLIO</div>
+					<div class="box" style="height:500px;line-height:500px;font-size:30px;color:coral;">PORTFOLIO</div>
 					<div class="box" style="padding:20px;color:indianred;">scroll</div>
-					<div class="box scroll" style="width:5px;height:50px;background-color:coral;margin-left:calc(50% - 2.5px);text-indent:-9999px;animation:scroll 2s infinite">scroll</div>
+					<div class="box scroll" style="width:2px;height:50px;background-color:coral;margin-left:calc(50% - 2.5px);text-indent:-9999px;animation:scroll 2s infinite">scroll</div>
 				</div>
 			</div>
 		</div>
