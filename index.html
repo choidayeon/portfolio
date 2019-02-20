@@ -96,6 +96,7 @@
 		.open-menu i:nth-child(1) {top: 15px;-webkit-transform: rotateZ(45deg);transform: rotateZ(45deg);}
 		.open-menu i:nth-child(2) {background: transparent;}
 		.open-menu i:nth-child(3) {top: 15px;-webkit-transform: rotateZ(-45deg);transform: rotateZ(-45deg);}
+		.leaves img{position:absolute;width:500px;opacity:0;transition-duration:.8s;}
 		@keyframes scroll{
 			0%{
 				border-radius:0 0 0 0;
@@ -118,6 +119,9 @@
 				'afterLoad':function(anchorsLink,index){
 					if(index==2){
 						$("#topmenu>li").addClass("mactive");
+						$(".leaves1").css({"right":"0","opacity":"1"})
+						$(".leaves2").css({"left":"0","opacity":"1"})
+						$(".leaves3").css({"right":"0","opacity":"1"})
 					}else{
 						$("#topmenu>li").removeClass("mactive");
 					}
@@ -256,6 +260,11 @@
 						프로그램_<br>
 						photoshop + illust + html + css + jquery + javascript
 					</div>
+				</div>
+				<div class="leaves">
+					<img src="./images/leaves1.png" alt="leave" class="leaves1" style="top:0;right:-100px;">
+					<img src="./images/leaves2.png" alt="leave2" class="leaves2" style="bottom:0;left:-100px;">
+					<img src="./images/leaves3.png" alt="leave3" class="leaves3" style="bottom:0;right:-100px;">
 				</div>
 			</div>
 		</div>
