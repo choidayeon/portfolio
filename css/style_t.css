@@ -1,0 +1,36 @@
+@media screen and (max-width:991px) {
+
+html,body {letter-spacing:-0.03em; font-size:62.5%;}
+
+section,article,header,footer,nav,div,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dd,dt,img,a,form,input,select,option,fieldset,textarea,button,label,figure {font-size:1.35rem; }
+
+.center	{width:94%;}
+
+
+/****************메인******************/
+
+#content>ul>li>a>p {width:100%; }
+
+.txt_line .track {font-size:64px; }
+
+#cont_title {padding: 60px 0 20px; font-size:36px; }
+
+.intro_wrap{margin:40px auto 0;}
+
+
+
+/***************서브******************/
+.detail_top img.web_visual{width:100%; }
+.detail_tit h3{font-size:32px; }
+.detail_tit p{font-size:15px;}
+
+.font_detail .fontStyle h4{font-size:22px; }
+.font_detail .fontStyle ul{width:80%; }
+.font_detail .fontStyle ul li{padding-left:20px; }
+
+.color_detail .color_wrap .main_color {width:33%; }
+.color_detail .color_wrap .circle{width:50px; height:50px; }
+.editor img.jeon{width:100%; }
+
+
+}
