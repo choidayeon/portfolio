@@ -23,6 +23,8 @@ section,article,header,footer,nav,div,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dd,dt,img,
 .detail_top img.web_visual{width:100%; }
 .detail_tit h3{font-size:32px; }
 .detail_tit p{font-size:15px;}
+.web_detail .detail_img {width:100%;}
+.web_detail .detail_img img{width:100%;}
 
 .font_detail .fontStyle h4{font-size:22px; }
 .font_detail .fontStyle ul{width:80%; }

@@ -107,7 +107,8 @@ textarea.ip_comm	{height:150px; padding:10px; line-height:1.5;}
 #content>ul>li:before{content:""; display:block; padding-top:100%;}
 #content>ul>li>a{width:100%; height:100%; position:absolute; left:0; top:0; background-size:cover !important; }
 #content>ul>li>a:after{content:""; display:block; width:100%; height:100%; background:rgba(0,0,0,0.6); position:absolute; left:0; top:0; transition:all .3s;}
-#content>ul>li>a>p{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); text-align:center; font-size:16px; font-weight:500; z-index:10; display:inline-block; }
+#content>ul>li>a>p{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); text-align:center; font-size:16px; font-weight:500; z-index:10; display:inline-block; line-height:1.3;}
+#content>ul>li>a>p>span{font-weight:400; font-size:13px; }
 #content>ul>li:hover a:after{background:rgba(0,0,0,0.1); }
 
 #content .web01 a{background:url(../images/sum01.jpg);}
@@ -119,6 +120,12 @@ textarea.ip_comm	{height:150px; padding:10px; line-height:1.5;}
 #content .web07 a{background:url(../images/sum07.jpg);}
 #content .web08 a{background:url(../images/sum08.jpg);}
 #content .web09 a{background:url(../images/sum09.jpg);}
+#content .web10 a{background:url(../images/visual10-2.jpg);}
+#content .web11 a{background:url(../images/visual11-2.jpg);}
+#content .web12 a{background:url(../images/visual12-2.jpg);}
+#content .web13 a{background:url(../images/visual13-2.jpg);}
+#content .web14 a{background:url(../images/visual14-2.jpg);}
+#content .web15 a{background:url(../images/visual15-2.jpg);}
 
 #content .web01:hover a{background:url(../images/sum01_02.jpg);}
 #content .web02:hover a{background:url(../images/sum02_02.jpg);}
@@ -129,6 +136,12 @@ textarea.ip_comm	{height:150px; padding:10px; line-height:1.5;}
 #content .web07:hover a{background:url(../images/sum07_02.jpg);}
 #content .web08:hover a{background:url(../images/sum08_02.jpg);}
 #content .web09:hover a{background:url(../images/sum09_02.jpg);}
+#content .web10:hover a{background:url(../images/visual10.jpg);}
+#content .web11:hover a{background:url(../images/visual11.jpg);}
+#content .web12:hover a{background:url(../images/visual12.jpg);}
+#content .web13:hover a{background:url(../images/visual13.jpg);}
+#content .web14:hover a{background:url(../images/visual14.jpg);}
+#content .web15:hover a{background:url(../images/visual15.jpg);}
 
 #content .edi01 a{background:url(../images/edi_visu01.jpg);}
 #content .edi02 a{background:url(../images/edi_visu02.jpg);}
@@ -228,6 +241,8 @@ a.back_btn{ padding:16px 0; font-size:14px; display:block;width :160px; text-ali
 .web_detail {padding-top:80px; }
 .web_detail h2{font-size:28px; font-family: 'Poppins', sans-serif; margin-bottom:16px; }
 .web_detail .img_detail img{width:100%; margin-bottom:20px; }
+.web_detail .img_detail p {line-height:2; font-size:14px; font-weight:500; }
+.web_detail .detail_img{text-align:center;}
 
 .cir_color01{background:#5ac4be;}
 .cir_color02{background:#0075ec;}
